@@ -1,32 +1,108 @@
+/* ==============================
+   GENERAL STYLING
+   ============================== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+h1,h2 {
+    text-align: center;
+    color: #ffffff;
 }
 
 button {
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
+    background: #00bfff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.2s;
 }
 
-#stats p {
-  margin: 5px;
+button:hover {
+    background: #009acd;
 }
 
-#events {
-  margin-top: 20px;
-  background-color: #e0e0e0;
-  padding: 10px;
-  border-radius: 5px;
+input, select {
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ==============================
+   CHARACTER PANEL
+   ============================== */
+#charPanel {
+    width: 300px;
+    background: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    height: calc(100% - 40px);
+    box-shadow: 0 0 10px #000;
+}
+
+#charPanel p {
+    margin: 5px 0;
+}
+
+/* ==============================
+   EVENTS PANEL
+   ============================== */
+.eventsPanel {
+    margin-left: 340px;
+    padding: 20px;
+    height: calc(100vh - 40px);
+    overflow-y: scroll;
+    background: #121212;
+    border-left: 2px solid #333;
+}
+
+.eventsPanel p {
+    background: #222;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* ==============================
+   SCROLLBAR STYLE
+   ============================== */
+.eventsPanel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.eventsPanel::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+.eventsPanel::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* ==============================
+   CREATION SCREEN
+   ============================== */
+#creation {
+    width: 300px;
+    margin: 50px auto;
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #000;
 }
