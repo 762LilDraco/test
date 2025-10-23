@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BitLife Clone</title>
+<title>BitLife Clone Interactive</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,16 +26,87 @@
     <div id="charPanel">
         <h2 id="charInfo"></h2>
         <p>Age: <span id="age">0</span></p>
-        <p>Happiness: <span id="happiness">50</span></p>
-        <p>Health: <span id="health">50</span></p>
-        <p>Smarts: <span id="smarts">50</span></p>
-        <p>Looks: <span id="looks">50</span></p>
+        <div class="statBarContainer">Happiness: <div id="happinessBar" class="statBar"></div></div>
+        <div class="statBarContainer">Health: <div id="healthBar" class="statBar"></div></div>
+        <div class="statBarContainer">Smarts: <div id="smartsBar" class="statBar"></div></div>
+        <div class="statBarContainer">Looks: <div id="looksBar" class="statBar"></div></div>
         <p>Money: $<span id="money">1000</span></p>
-        <button id="nextYearBtn">Next Year</button>
     </div>
+
+    <!-- TOP NAV TABS -->
+    <div id="menuTabs">
+        <button class="tabBtn" data-tab="life">Life</button>
+        <button class="tabBtn" data-tab="career">Career</button>
+        <button class="tabBtn" data-tab="education">Education</button>
+        <button class="tabBtn" data-tab="family">Family</button>
+        <button class="tabBtn" data-tab="assets">Assets</button>
+        <button class="tabBtn" data-tab="health">Health</button>
+        <button class="tabBtn" data-tab="leisure">Leisure</button>
+        <button class="tabBtn" data-tab="expansions">Expansions</button>
+        <button class="tabBtn" data-tab="advanced">Advanced</button>
+    </div>
+
+    <!-- TAB CONTENT PANELS -->
+    <div id="tabContent">
+        <div class="tabPanel" id="life">
+            <button onclick="nextYearInteractive()">Next Year</button>
+        </div>
+
+        <div class="tabPanel" id="career">
+            <button onclick="takeJob()">Take Job</button>
+            <button onclick="startBusiness()">Start Business</button>
+        </div>
+
+        <div class="tabPanel" id="education">
+            <button onclick="goToSchool()">Go to School</button>
+            <button onclick="skipSchool()">Skip School</button>
+        </div>
+
+        <div class="tabPanel" id="family">
+            <button onclick="datePartner()">Date Partner</button>
+            <button onclick="haveChild()">Have Child</button>
+        </div>
+
+        <div class="tabPanel" id="assets">
+            <button onclick="buyProperty()">Buy Property</button>
+            <button onclick="buyVehicle()">Buy Vehicle</button>
+            <button onclick="takeLoan()">Take Loan</button>
+        </div>
+
+        <div class="tabPanel" id="health">
+            <button onclick="exercise()">Exercise</button>
+            <button onclick="visitDoctor()">Visit Doctor</button>
+        </div>
+
+        <div class="tabPanel" id="leisure">
+            <button onclick="doHobby()">Do Hobby</button>
+            <button onclick="travel()">Travel</button>
+        </div>
+
+        <div class="tabPanel" id="expansions">
+            <button onclick="investStocks()">Invest in Stocks</button>
+            <button onclick="buyRentalProperty()">Buy Rental Property</button>
+            <button onclick="doBlackMarket()">Black Market</button>
+            <button onclick="recruitCult()">Recruit to Cult</button>
+            <button onclick="startMission()">Secret Agent Mission</button>
+            <button onclick="addZooAnimal()">Add Zoo Animal</button>
+            <button onclick="runForOffice()">Run for Office</button>
+            <button onclick="outdoorActivity()">Outdoor Activity</button>
+            <button onclick="racingEvent()">Racing Event</button>
+            <button onclick="casinoGamble()">Casino Gamble</button>
+        </div>
+
+        <div class="tabPanel" id="advanced">
+            <button onclick="toggleGodMode()">Toggle God Mode</button>
+            <button onclick="timeTravel()">Time Travel</button>
+            <button onclick="continueWithDescendant()">Play Descendant</button>
+        </div>
+    </div>
+
     <div id="events" class="eventsPanel"></div>
 </div>
 
 <script src="script.js"></script>
+<script src="interactive.js"></script>
 </body>
 </html>
