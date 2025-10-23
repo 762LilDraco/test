@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitLife Clone - Core Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BitLife Clone</h1>
+
+    <!-- Character Creation -->
+    <div id="creation">
+      <h2>Create Your Character</h2>
+      <input type="text" id="charName" placeholder="Name">
+      <select id="charGender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <select id="charNationality">
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Japan">Japan</option>
+        <option value="Mexico">Mexico</option>
+      </select>
+      <button id="createBtn">Start Life</button>
+    </div>
+
+    <!-- Main Game -->
+    <div id="game" style="display:none;">
+      <h2 id="charInfo"></h2>
+
+      <div id="stats">
+        <p>Age: <span id="age">0</span></p>
+        <p>Happiness: <span id="happiness">50</span></p>
+        <p>Health: <span id="health">50</span></p>
+        <p>Smarts: <span id="smarts">50</span></p>
+        <p>Looks: <span id="looks">50</span></p>
+        <p>Money: $<span id="money">1000</span></p>
+      </div>
+
+      <button id="nextYearBtn">Next Year</button>
+
+      <div id="events"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
