@@ -23,10 +23,13 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin: 5px;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
-button:hover { background: #009acd; }
+button:hover { 
+    background: #009acd; 
+    transform: scale(1.05);
+}
 
 input, select {
     width: 80%;
@@ -71,25 +74,41 @@ input, select {
     height: 20px;
     border-radius: 5px;
     width: 0%;
+    transition: width 0.3s, background-color 0.3s;
 }
 
 /* ==============================
-   TOP NAV TABS
+   MAIN MENU CARDS
    ============================== */
-#menuTabs {
+#mainMenu {
     margin-left: 320px;
-    display: flex;
-    flex-wrap: wrap;
-    background: #2b2b2b;
-    padding: 5px;
-    border-bottom: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    gap: 10px;
+    padding: 10px;
 }
 
-#menuTabs .tabBtn {
-    flex: 1;
-    min-width: 80px;
-    margin: 2px;
-    font-size: 14px;
+.menuCard {
+    background: #2b2b2b;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuCard img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.menuCard:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00bfff;
 }
 
 /* ==============================
@@ -99,17 +118,16 @@ input, select {
     margin-left: 320px;
     margin-top: 5px;
     padding: 10px;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 200px);
     overflow-y: auto;
     background: #121212;
 }
 
 .tabPanel { display: none; }
-
 .tabPanel.active { display: block; }
 
 /* ==============================
-   EVENTS PANEL
+   EVENT PANEL
    ============================== */
 .eventsPanel {
     margin-left: 320px;
@@ -149,11 +167,11 @@ input, select {
 }
 
 /* ==============================
-   MOBILE FRIENDLY
+   MOBILE RESPONSIVE
    ============================== */
 @media screen and (max-width: 768px){
     #charPanel { width: 100%; position: relative; height: auto; margin-bottom: 10px; }
-    #menuTabs { margin-left: 0; flex-wrap: nowrap; overflow-x: scroll; }
+    #mainMenu { margin-left: 0; grid-template-columns: repeat(auto-fill,minmax(80px,1fr)); }
     #tabContent { margin-left: 0; height: auto; }
     .eventsPanel { margin-left: 0; height: 50vh; }
 }
