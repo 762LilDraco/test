@@ -9,7 +9,7 @@ body {
     padding: 0;
 }
 
-h1,h2 {
+h1, h2 {
     text-align: center;
     color: #ffffff;
 }
@@ -22,13 +22,11 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
+    margin: 5px;
     transition: background 0.2s;
 }
 
-button:hover {
-    background: #009acd;
-}
+button:hover { background: #009acd; }
 
 input, select {
     width: 80%;
@@ -49,49 +47,92 @@ input, select {
     padding: 20px;
     border-radius: 10px;
     position: fixed;
-    left: 20px;
-    top: 20px;
-    height: calc(100% - 40px);
+    left: 10px;
+    top: 10px;
+    height: calc(100% - 20px);
     box-shadow: 0 0 10px #000;
+    overflow-y: auto;
 }
 
-#charPanel p {
+#charPanel p { margin: 10px 0; }
+
+/* ==============================
+   STAT BARS
+   ============================== */
+.statBarContainer {
+    background: #444;
+    border-radius: 5px;
     margin: 5px 0;
+    padding: 3px;
+    font-size: 14px;
 }
+
+.statBar {
+    height: 20px;
+    border-radius: 5px;
+    width: 0%;
+}
+
+/* ==============================
+   TOP NAV TABS
+   ============================== */
+#menuTabs {
+    margin-left: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #2b2b2b;
+    padding: 5px;
+    border-bottom: 2px solid #333;
+}
+
+#menuTabs .tabBtn {
+    flex: 1;
+    min-width: 80px;
+    margin: 2px;
+    font-size: 14px;
+}
+
+/* ==============================
+   TAB PANELS
+   ============================== */
+#tabContent {
+    margin-left: 320px;
+    margin-top: 5px;
+    padding: 10px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: #121212;
+}
+
+.tabPanel { display: none; }
+
+.tabPanel.active { display: block; }
 
 /* ==============================
    EVENTS PANEL
    ============================== */
 .eventsPanel {
-    margin-left: 340px;
+    margin-left: 320px;
+    margin-top: 10px;
     padding: 20px;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 120px);
     overflow-y: scroll;
     background: #121212;
     border-left: 2px solid #333;
 }
 
-.eventsPanel p {
+.eventPopup {
     background: #222;
     padding: 10px;
     margin: 10px 0;
+    border-left: 5px solid #00bfff;
     border-radius: 5px;
+    animation: fadeIn 0.3s ease;
 }
 
-/* ==============================
-   SCROLLBAR STYLE
-   ============================== */
-.eventsPanel::-webkit-scrollbar {
-    width: 10px;
-}
-
-.eventsPanel::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 5px;
-}
-
-.eventsPanel::-webkit-scrollbar-track {
-    background: #222;
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(-10px);}
+    to {opacity:1; transform:translateY(0);}
 }
 
 /* ==============================
@@ -105,4 +146,14 @@ input, select {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px #000;
+}
+
+/* ==============================
+   MOBILE FRIENDLY
+   ============================== */
+@media screen and (max-width: 768px){
+    #charPanel { width: 100%; position: relative; height: auto; margin-bottom: 10px; }
+    #menuTabs { margin-left: 0; flex-wrap: nowrap; overflow-x: scroll; }
+    #tabContent { margin-left: 0; height: auto; }
+    .eventsPanel { margin-left: 0; height: 50vh; }
 }
