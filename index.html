@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BitLife Clone Interactive</title>
+<title>BitLife Clone - Full UI</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,6 +23,7 @@
 
 <!-- GAME INTERFACE -->
 <div id="game" style="display:none;">
+    <!-- CHARACTER PANEL -->
     <div id="charPanel">
         <h2 id="charInfo"></h2>
         <p>Age: <span id="age">0</span></p>
@@ -33,56 +34,76 @@
         <p>Money: $<span id="money">1000</span></p>
     </div>
 
-    <!-- TOP NAV TABS -->
-    <div id="menuTabs">
-        <button class="tabBtn" data-tab="life">Life</button>
-        <button class="tabBtn" data-tab="career">Career</button>
-        <button class="tabBtn" data-tab="education">Education</button>
-        <button class="tabBtn" data-tab="family">Family</button>
-        <button class="tabBtn" data-tab="assets">Assets</button>
-        <button class="tabBtn" data-tab="health">Health</button>
-        <button class="tabBtn" data-tab="leisure">Leisure</button>
-        <button class="tabBtn" data-tab="expansions">Expansions</button>
-        <button class="tabBtn" data-tab="advanced">Advanced</button>
+    <!-- MAIN MENU ICONS -->
+    <div id="mainMenu">
+        <div class="menuCard" data-panel="life">
+            <img src="icons/life.png" alt="Life Icon">
+            <p>Life</p>
+        </div>
+        <div class="menuCard" data-panel="career">
+            <img src="icons/career.png" alt="Career Icon">
+            <p>Career</p>
+        </div>
+        <div class="menuCard" data-panel="education">
+            <img src="icons/education.png" alt="Education Icon">
+            <p>Education</p>
+        </div>
+        <div class="menuCard" data-panel="family">
+            <img src="icons/family.png" alt="Family Icon">
+            <p>Family</p>
+        </div>
+        <div class="menuCard" data-panel="assets">
+            <img src="icons/assets.png" alt="Assets Icon">
+            <p>Assets</p>
+        </div>
+        <div class="menuCard" data-panel="health">
+            <img src="icons/health.png" alt="Health Icon">
+            <p>Health</p>
+        </div>
+        <div class="menuCard" data-panel="leisure">
+            <img src="icons/leisure.png" alt="Leisure Icon">
+            <p>Leisure</p>
+        </div>
+        <div class="menuCard" data-panel="expansions">
+            <img src="icons/expansions.png" alt="Expansions Icon">
+            <p>Expansions</p>
+        </div>
+        <div class="menuCard" data-panel="advanced">
+            <img src="icons/advanced.png" alt="Advanced Icon">
+            <p>Advanced</p>
+        </div>
     </div>
 
-    <!-- TAB CONTENT PANELS -->
+    <!-- PANELS -->
     <div id="tabContent">
         <div class="tabPanel" id="life">
             <button onclick="nextYearInteractive()">Next Year</button>
         </div>
-
         <div class="tabPanel" id="career">
             <button onclick="takeJob()">Take Job</button>
             <button onclick="startBusiness()">Start Business</button>
         </div>
-
         <div class="tabPanel" id="education">
             <button onclick="goToSchool()">Go to School</button>
             <button onclick="skipSchool()">Skip School</button>
         </div>
-
         <div class="tabPanel" id="family">
             <button onclick="datePartner()">Date Partner</button>
             <button onclick="haveChild()">Have Child</button>
         </div>
-
         <div class="tabPanel" id="assets">
             <button onclick="buyProperty()">Buy Property</button>
             <button onclick="buyVehicle()">Buy Vehicle</button>
             <button onclick="takeLoan()">Take Loan</button>
         </div>
-
         <div class="tabPanel" id="health">
             <button onclick="exercise()">Exercise</button>
             <button onclick="visitDoctor()">Visit Doctor</button>
         </div>
-
         <div class="tabPanel" id="leisure">
             <button onclick="doHobby()">Do Hobby</button>
             <button onclick="travel()">Travel</button>
         </div>
-
         <div class="tabPanel" id="expansions">
             <button onclick="investStocks()">Invest in Stocks</button>
             <button onclick="buyRentalProperty()">Buy Rental Property</button>
@@ -95,7 +116,6 @@
             <button onclick="racingEvent()">Racing Event</button>
             <button onclick="casinoGamble()">Casino Gamble</button>
         </div>
-
         <div class="tabPanel" id="advanced">
             <button onclick="toggleGodMode()">Toggle God Mode</button>
             <button onclick="timeTravel()">Time Travel</button>
@@ -103,6 +123,7 @@
         </div>
     </div>
 
+    <!-- EVENT LOG -->
     <div id="events" class="eventsPanel"></div>
 </div>
 
